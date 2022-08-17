@@ -14,14 +14,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // Set your configuration on the auth object
         auth.inMemoryAuthentication()
-                .withUser("blah")
-                .password("blah")
+                .withUser("user")
+                .password("user")
                 .roles("USER")
                 .and()
                 .withUser("foo")
                 .password("foo")
                 .roles("ADMIN");
     }
+
 
     @Bean
     public PasswordEncoder getPasswordEncoder() {
